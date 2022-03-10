@@ -3,9 +3,13 @@ public class printPermutation {
 	public static void main(String[]args) {
 		Scanner scn=new Scanner(System.in);
 		String word=scn.nextLine();
-		allPermutation(word,"");
+		allPermutation permu=new allPermutation();
+		permu.allPermutations(word,"");
 	}
-	public static void allPermutation(String que,String asf) {
+
+}
+ class allPermutation{
+	public void allPermutations(String que,String asf) {
 		if(que.length()==0) {
 			System.out.println(asf);
 		}
@@ -14,7 +18,7 @@ public class printPermutation {
 			String lq=que.substring(0,i);
 			String rq=que.substring(i+1);
 			String newQue=lq+rq;
-			allPermutation(newQue,asf+ch);
+			allPermutations(newQue,asf+ch);
 		}
 	}
 }
